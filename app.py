@@ -53,9 +53,8 @@ def home():
         </head>
         <body>
             <div class="content">
-                <h1>Welcome to My Flask API 💙💚</h1>
+                <h1>💙 Welcome to My Flask API 💚</h1>
                 <a href="/student">View Student Info</a>
-                <br><br>
                 <a href="/register">Register Here</a>
             </div>
         </body>
@@ -236,7 +235,7 @@ def register():
         </head>
         <body>
             <div class="register-box">
-                <h2>Student Registration 💚💙</h2>
+                <h2>💚Student Registration💙</h2>
                 <form method="POST">
                     <input type="text" name="name" placeholder="Enter your name" required><br>
                     <input type="number" name="grade" placeholder="Enter your grade" required><br>
