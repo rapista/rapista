@@ -11,7 +11,7 @@ def home():
     return """
     <html>
         <head>
-            <title>Flask API Home</title>
+            <title>Students Information System</title>
             <style>
                 body {
                     margin: 0;
