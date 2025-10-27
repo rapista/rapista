@@ -53,7 +53,7 @@ def home():
         </head>
         <body>
             <div class="content">
-                <h1>💙 Welcome to My Flask API 💚</h1>
+                <h1>💙 Student Information System 💚</h1>
                 <a href="/student">View Student Info</a>
                 <a href="/register">Register Here</a>
             </div>
