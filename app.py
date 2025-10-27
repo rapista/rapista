@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request, render_template_string, redirect, url
 
 app = Flask(__name__)
 
-# Temporary in-memory storage for students
+# In-memory list to store registered students
 students = []
 
 # --- Home Route ---
@@ -41,24 +41,24 @@ def home():
                 }
                 a {
                     text-decoration: none;
-                    background-color: #fff;
-                    color: #5563DE;
+                    background-color: #ffffff;
+                    color: #1e8449;
                     padding: 10px 20px;
                     border-radius: 5px;
                     font-weight: bold;
                     transition: 0.3s;
                 }
                 a:hover {
-                    background-color: #f1f1f1;
+                    background-color: #e8f6f3;
                 }
             </style>
         </head>
         <body>
             <video autoplay loop muted>
-                <source src="https://cdn.pixabay.com/video/2018/10/03/20352-294217894_large.mp4" type="video/mp4">
+                <source src="https://cdn.pixabay.com/video/2021/10/25/95268-636567421_large.mp4" type="video/mp4">
             </video>
             <div class="content">
-                <h1>Welcome to my Flask API!</h1>
+                <h1>Welcome to My Flask API 🌿</h1>
                 <a href="/student">View Student Info</a>
                 <br><br>
                 <a href="/register">Register Here</a>
@@ -78,7 +78,7 @@ def get_student():
                 <style>
                     body {
                         font-family: 'Poppins', sans-serif;
-                        background: linear-gradient(135deg, #5563DE, #74ABE2);
+                        background: linear-gradient(135deg, #00b894, #0984e3);
                         color: white;
                         text-align: center;
                         padding-top: 150px;
@@ -86,12 +86,12 @@ def get_student():
                     a {
                         text-decoration: none;
                         background-color: #fff;
-                        color: #5563DE;
+                        color: #00b894;
                         padding: 10px 20px;
                         border-radius: 5px;
                     }
                     a:hover {
-                        background-color: #f1f1f1;
+                        background-color: #dfe6e9;
                     }
                 </style>
             </head>
@@ -119,7 +119,7 @@ def get_student():
             <style>
                 body {{
                     font-family: 'Poppins', sans-serif;
-                    background: linear-gradient(135deg, #74ABE2, #5563DE);
+                    background: linear-gradient(135deg, #00b894, #0984e3);
                     color: white;
                     text-align: center;
                     padding: 40px;
@@ -131,26 +131,27 @@ def get_student():
                     background: white;
                     color: #333;
                     border-radius: 10px;
-                    width: 300px;
+                    width: 320px;
                     margin: 20px auto;
                     padding: 20px;
-                    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                    border-top: 5px solid #00b894;
                 }}
                 a {{
                     text-decoration: none;
                     background-color: #fff;
-                    color: #5563DE;
+                    color: #00b894;
                     padding: 10px 20px;
                     border-radius: 5px;
                     font-weight: bold;
                 }}
                 a:hover {{
-                    background-color: #f1f1f1;
+                    background-color: #dfe6e9;
                 }}
             </style>
         </head>
         <body>
-            <h2>Registered Students</h2>
+            <h2>🌱 Registered Students</h2>
             {student_list}
             <br><br>
             <a href="/">Go Back Home</a>
@@ -166,14 +167,12 @@ def register():
         grade = request.form.get('grade')
         section = request.form.get('section')
 
-        # Save the student in memory
         students.append({
             "name": name,
             "grade": grade,
             "section": section
         })
 
-        # Redirect to student list after registration
         return redirect(url_for('get_student'))
 
     return render_template_string("""
@@ -205,9 +204,10 @@ def register():
                     text-align: center;
                     margin: 100px auto;
                     color: #333;
+                    border-top: 6px solid #00b894;
                 }
                 h2 {
-                    color: #5563DE;
+                    color: #0984e3;
                     margin-bottom: 20px;
                 }
                 input[type="text"], input[type="number"] {
@@ -216,40 +216,46 @@ def register():
                     margin: 10px 0;
                     border: 1px solid #ccc;
                     border-radius: 5px;
+                    font-size: 1em;
                 }
                 button {
-                    background-color: #5563DE;
+                    background: linear-gradient(135deg, #00b894, #0984e3);
                     color: white;
                     border: none;
                     padding: 10px 20px;
                     border-radius: 5px;
                     cursor: pointer;
                     font-size: 1em;
+                    transition: 0.3s;
                 }
                 button:hover {
-                    background-color: #3746a1;
+                    background: linear-gradient(135deg, #0984e3, #00b894);
                 }
                 a {
                     display: block;
                     margin-top: 15px;
-                    color: #5563DE;
+                    color: #0984e3;
                     text-decoration: none;
+                    font-weight: bold;
+                }
+                a:hover {
+                    color: #00b894;
                 }
             </style>
         </head>
         <body>
             <video autoplay loop muted>
-                <source src="https://cdn.pixabay.com/video/2023/06/22/169408-844449615_large.mp4" type="video/mp4">
+                <source src="https://cdn.pixabay.com/video/2024/03/02/204983-917464946_large.mp4" type="video/mp4">
             </video>
             <div class="register-box">
-                <h2>Student Registration</h2>
+                <h2>Student Registration 🌿</h2>
                 <form method="POST">
                     <input type="text" name="name" placeholder="Enter your name" required><br>
                     <input type="number" name="grade" placeholder="Enter your grade" required><br>
                     <input type="text" name="section" placeholder="Enter your section" required><br>
                     <button type="submit">Register</button>
                 </form>
-                <a href="/">Back to Home</a>
+                <a href="/">← Back to Home</a>
             </div>
         </body>
     </html>
